@@ -11,7 +11,7 @@ function Employees() {
   const handleOnSaveEmpData = (fullEmpData) => {
     const dataemp = {
       ...fullEmpData,
-      id: Math.random().toString(),
+      // id: Math.random().toString(),
     };
     console.log(" line 16 employees.js  " + dataemp.id, fullEmpData);
   };
