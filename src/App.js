@@ -4,6 +4,7 @@ import First from "./components/js/First";
 import { useState } from "react";
 
 import Employees from "./components/js/Employees";
+import NameDemo from "./components/js/NameDemo.js";
 
 function App() {
   const [like, setLike] = useState(0);
@@ -20,6 +21,7 @@ function App() {
       </div>
       <First />
       <Employees />
+      <NameDemo />
     </>
   );
 }

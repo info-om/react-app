@@ -11,7 +11,7 @@ function Employees() {
   const handleOnSaveEmpData = (fullEmpData) => {
     const dataemp = {
       ...fullEmpData,
-      // id: Math.random().toString(),
+      id: Math.random().toString(),
     };
     console.log(" line 16 employees.js  " + dataemp.id, fullEmpData);
   };
@@ -21,7 +21,7 @@ function Employees() {
       <InputForm onSaveEmpData={handleOnSaveEmpData} />
       {names.map((name) => {
         return (
-          <div className="employee">
+          <div className="employee" key={Math.random() + 1}>
             <span>{name.id}</span> <span>{name.name}</span>
             <span>{name.designation}</span>
           </div>
