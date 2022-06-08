@@ -3,3 +3,6 @@
   align-items: center;
   justify-content: space-evenly;
 }
+.btt {
+  border-top: 1px solid red;
+}

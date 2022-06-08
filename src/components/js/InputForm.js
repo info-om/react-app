@@ -1,9 +1,23 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import "../css/InputForm.css";
+
 function InputForm(props) {
   const [empname, setEmpName] = useState("");
   const [empId, setEmpId] = useState("");
   const [empDes, setEmpDes] = useState("");
+
+  let empData = {
+    name: empname,
+    id: empId,
+    des: empDes,
+  };
+
+  useEffect(() => {
+    axios
+      .post(" http://localhost:4000/employee", empData)
+      .then((res) => console.log(res.data));
+  }, []);
 
   const handleName = (event) => {
     setEmpName(event.target.value);
@@ -20,11 +34,6 @@ function InputForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const empData = {
-      name: empname,
-      id: empId,
-      des: empDes,
-    };
     props.onSaveEmpData(empData);
 
     setEmpName("");
