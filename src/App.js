@@ -1,30 +1,23 @@
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import First from "./components/js/First";
-import { useState } from "react";
-
-import Employees from "./components/js/Employees";
-import NameDemo from "./components/js/NameDemo.js";
-import Product from "./components/js/Product";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/js/Home";
+import About from "./components/js/About";
+import Contact from "./components/js/Contact";
+import Header from "./components/js/Header";
+import PageNF from "./components/js/PageNF";
+import Login from "./components/js/Login";
 
 function App() {
-  const [like, setLike] = useState(0);
-  const handleLike = () => {
-    setLike(() => like + 1);
-  };
   return (
-    <>
-      <h1 className="btn-dark text-center">OM</h1>
-      <div className="primaryContainer">
-        <button className="primaryButton" onClick={handleLike}>
-          {like} <span>Like</span>
-        </button>
-      </div>
-      <First />
-      <Employees />
-      <NameDemo />
-      <Product />
-    </>
+    <Routes>
+      <Route path="/" element={<Header />}>
+        {/* <Route index element={<Home />} /> // default components */}
+        <Route path="home" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<PageNF />} />
+      </Route>
+    </Routes>
   );
 }
 

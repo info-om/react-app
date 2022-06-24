@@ -1,15 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../css/Products.css";
-//import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Product() {
   const [products, setProducts] = useState([]);
-  // useEffect(() => {
-  //   axios.get(" http://localhost:4000/products").then((res) => {
-  //     setProducts(res.data);
-  //   });
-  // }, []);
+  useEffect(() => {
+    axios.get(" http://localhost:4000/products").then((res) => {
+      setProducts(res.data);
+    });
+  }, []);
 
   return (
     <>

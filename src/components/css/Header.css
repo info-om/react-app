@@ -1,0 +1,17 @@
+nav {
+  height: 4rem;
+  background-color: gray;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 1.5rem;
+}
+nav a:hover {
+  color: blue;
+  padding: 2.5rem 1.5rem;
+  font-weight: 900;
+}
+.login-button {
+  float: right;
+}
